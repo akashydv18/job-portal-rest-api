@@ -1,6 +1,6 @@
 # 🏢 Job Portal REST API
 
-A production-ready **Job Portal Backend** built with **Spring Boot**, featuring JWT Authentication, Role-Based Access Control, Global Exception Handling, and Pagination.
+A production-ready **Job Portal Backend** built with **Spring Boot**, featuring JWT Authentication, Role-Based Access Control, Global Exception Handling, Pagination, and Swagger UI Documentation.
 
 ---
 
@@ -15,6 +15,7 @@ A production-ready **Job Portal Backend** built with **Spring Boot**, featuring 
 | Spring Data JPA | Database ORM |
 | Hibernate | ORM Implementation |
 | MySQL | Relational Database |
+| SpringDoc OpenAPI | Swagger UI Documentation |
 | Maven | Build Tool |
 | Postman | API Testing |
 
@@ -29,6 +30,7 @@ A production-ready **Job Portal Backend** built with **Spring Boot**, featuring 
 - ✅ **RESTful APIs** — Clean 4-layer architecture
 - ✅ **Password Encryption** — BCrypt password hashing
 - ✅ **Location-based Job Search** — Filter jobs by location
+- ✅ **Swagger UI** — Interactive API documentation with JWT support
 
 ---
 
@@ -37,6 +39,7 @@ A production-ready **Job Portal Backend** built with **Spring Boot**, featuring 
 ```
 com.jobportal
 │
+├── config/             → Swagger Configuration (SwaggerConfig)
 ├── controller/         → API endpoints (AuthController, JobController)
 ├── service/            → Business logic (AuthService, JobService)
 ├── repository/         → Database operations (UserRepository, JobRepository)
@@ -90,6 +93,28 @@ com.jobportal
 
 ---
 
+## 📘 Swagger UI
+
+Interactive API documentation available at:
+
+```
+http://localhost:9090/swagger-ui/index.html
+```
+
+### How to use Swagger UI with JWT:
+
+```
+Step 1 → Open Swagger UI in browser
+Step 2 → Go to Authentication → POST /api/auth/login
+Step 3 → Click "Try it out" → Enter email & password → Execute
+Step 4 → Copy JWT token from response
+Step 5 → Click "Authorize 🔒" button on top right
+Step 6 → Paste token (without Bearer) → Click Authorize
+Step 7 → Now test all protected APIs directly from browser!
+```
+
+---
+
 ## ⚙️ Setup & Installation
 
 ### Prerequisites
@@ -122,6 +147,10 @@ spring.jpa.open-in-view=false
 
 jwt.secret=mySecretKey123456789mySecretKey123456789
 jwt.expiration=86400000
+
+# Swagger
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.api-docs.path=/v3/api-docs
 ```
 
 ### Step 4 — Run the Application
@@ -130,6 +159,8 @@ mvn spring-boot:run
 ```
 
 Server starts at: `http://localhost:9090`
+
+Swagger UI at: `http://localhost:9090/swagger-ui/index.html`
 
 ---
 
@@ -229,11 +260,21 @@ Global exception handling with proper HTTP status codes:
 
 ---
 
+## 🔮 Future Improvements
+
+- ⬜ **Job Application System** — Seekers can apply, Companies can manage applications
+- ⬜ **Refresh Token** — Better authentication experience
+- ⬜ **Email Notifications** — Notify on application status via Spring Mail
+- ⬜ **Docker** — Containerize the application
+- ⬜ **AWS Deployment** — Deploy on EC2 with RDS MySQL
+
+---
+
 ## 👨‍💻 Author
 
 **Aakash Kumar Yadav**
 - GitHub: [@akashydv18](https://github.com/akashydv18)
-- LinkedIn: linkedin.com/in/aakash-yadav-988447281
+- LinkedIn: [linkedin.com/in/aakash-yadav-988447281](https://linkedin.com/in/aakash-yadav-988447281)
 - Email: aakashrajyaduvanshi7@gmail.com
 - LeetCode: [akashydv18](https://leetcode.com/akashydv18)
 
