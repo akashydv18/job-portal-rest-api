@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class JobController {
 
     @Autowired
-    private JobService jobService;
+    private JobService jobService;   
 
     @Operation(summary = "Post a new job",
                description = "Only COMPANY role can post jobs")

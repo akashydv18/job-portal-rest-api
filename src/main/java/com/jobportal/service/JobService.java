@@ -25,7 +25,7 @@ public class JobService {
                     "Company not found: " + companyEmail
                 ));
         job.setCompany(company);
-        return jobRepository.save(job);
+        return jobRepository.save(job); 
     }
 
     public Page<Job> getAllJobs(int page, int size) {

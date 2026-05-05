@@ -25,14 +25,25 @@ public class SecurityConfig {
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
+
+            
                 .requestMatchers("/api/auth/**").permitAll()
 
+           
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/swagger-ui.html").permitAll()
                 .requestMatchers("/v3/api-docs/**").permitAll()
 
+          
                 .requestMatchers("/api/jobs/post").hasRole("COMPANY")
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+            
+                .requestMatchers("/api/applications/apply/**").hasRole("JOB_SEEKER")
+                .requestMatchers("/api/applications/my").hasRole("JOB_SEEKER")
+                .requestMatchers("/api/applications/job/**").hasRole("COMPANY")
+                .requestMatchers("/api/applications/status/**").hasRole("COMPANY")
+
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter,

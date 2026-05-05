@@ -29,15 +29,20 @@ public class Job {
     	
     	return title; 
     	}
+    
     public String getDescription() { 
+    	
     	return description; 
-    	}
+    	   }
+    
     public String getLocation() { 
     	return location; 
     	}
+    
     public String getSalary() { 
     	return salary; 
-    	}
+   	}
+    
     public User getCompany() {
     	return company; 
     	}
@@ -45,18 +50,28 @@ public class Job {
     public void setId(Long id) { 
     	this.id = id; 
     	}
+    
+    
     public void setTitle(String title) { 
     	this.title = title; 
     	}
+    
+    
     public void setDescription(String description) { 
     	this.description = description; 
     	}
+    
+    
     public void setLocation(String location) { 
     	this.location = location; 
     	}
+    
+    
     public void setSalary(String salary) { 
     	this.salary = salary;
     	}
+    
+    
     public void setCompany(User company) {
     	this.company = company; 
     	}
